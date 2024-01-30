@@ -37,7 +37,7 @@ def get_attr(user_input, usermention, channel, username):
         df = pd.read_csv("top100.csv")
         top = ""
         for index, row in enumerate(df):
-            top = f"{top}\n{index + 1}. {row['username']}, {row['attribute']}"
+            top = f"{top}\n{index + 1}. {row}"
         return top
 
     if (
