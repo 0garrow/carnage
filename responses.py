@@ -16,7 +16,7 @@ def get_response(user_input, username, usermention, channel):
     # elif lowered.startswith(PREFIX + "google"):
     #     webbrowser.open("https://www.google.com/search?q=" + user_input[7:])
     elif lowered.startswith(PREFIX + "insult"):
-        return choice(insults)
+        return f"{usermention} {choice(insults)}"
     elif lowered.startswith(PREFIX + "attr"):
         return get_attr(user_input[6:], usermention, channel)
     elif lowered.startswith(PREFIX + "fight"):
