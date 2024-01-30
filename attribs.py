@@ -4,7 +4,7 @@ import pandas as pd
 
 def write_top100(username, user_input):
     with open("top100.csv", "a") as file:
-        file.writelines(username, user_input)
+        file.writelines(f"{username}, {user_input},")
     return
 
 def get_attr(user_input, usermention, channel, username):
