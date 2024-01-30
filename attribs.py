@@ -2,7 +2,6 @@ from random import randint
 from variables import attributes, attributes_nsfw
 import pandas as pd
 
-
 def get_attr(user_input, usermention, channel, username):
     # Convert discord module objects to strings.
     user_input = str(user_input)
@@ -14,9 +13,20 @@ def get_attr(user_input, usermention, channel, username):
     attr_nsfw_list = ", ".join(attributes_nsfw)
 
 
+
 def write_top100(username, user_input):
     with open("top100.csv", "a") as file:
         file.writelines(username, user_input)
+
+
+
+
+
+
+def write_top100(username, user_input):
+    with open("top100.csv", "a") as file:
+        file.writelines(username, user_input)
+
 
     if user_input == "help" and channel.startswith("nsfw"):
         return f"""# __Carnage Commands__ (attr)
