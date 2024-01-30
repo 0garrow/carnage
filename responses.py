@@ -18,7 +18,7 @@ def get_response(user_input, username, usermention, channel):
     elif lowered.startswith(PREFIX + "insult"):
         return f"{usermention} {choice(insults)}"
     elif lowered.startswith(PREFIX + "attr"):
-        return get_attr(user_input[6:], usermention, channel)
+        return get_attr(user_input[6:], usermention, channel, username)
     elif lowered.startswith(PREFIX + "fight"):
         if username == MY_NAME:
             return choice(
