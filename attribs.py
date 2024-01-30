@@ -35,10 +35,11 @@ def get_attr(user_input, usermention, channel, username):
         """
     elif user_input == "top":
         df = pd.read_csv("top100.csv")
-        top = ""
-        for index, row in enumerate(df):
-            top = f"{top}\n{index + 1}. {row}"
-        return top
+        return df
+        # top = ""
+        # for index, row in enumerate(df):
+        #     top = f"{top}\n{index + 1}. {row}"
+        # return top
 
     if (
         channel.startswith("nsfw")
