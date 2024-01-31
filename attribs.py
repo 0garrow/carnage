@@ -53,6 +53,7 @@ def get_attr(user_input, usermention, channel, username):
         return f"{usermention} is {randint(0, 100)}% {user_input} 😈"
     elif user_input in attributes:
         percentage = randint(0, 100)
+        percentage = 100
 
         if percentage == 100:
             write_top100(username, user_input)
