@@ -1,10 +1,11 @@
 from random import randint
 from variables import attributes, attributes_nsfw
 import pandas as pd
+from tabulate import tabulate
 
 def write_top100(username, user_input):
     with open("top100.csv", "a") as file:
-        file.writelines(f"{username}, {user_input}")
+        file.writelines(f"{username}; {user_input}")
     return
 
 def get_attr(user_input, usermention, channel, username):
@@ -34,8 +35,8 @@ def get_attr(user_input, usermention, channel, username):
         {attr_list}
         """
     elif user_input == "top":
-        df = pd.read_csv("top100.csv")
-        return df
+        df = pd.read_csv("top100.csv", sep=";")
+        return tabulate(df, headers=['Username', 'Attribute'], tablefmt='fancy_grid', showindex=False)
         # top = ""
         # for index, row in enumerate(df):
         #     top = f"{top}\n{index + 1}. {row}"
