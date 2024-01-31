@@ -6,7 +6,7 @@ from tabulate import tabulate
 
 def write_top100(username, user_input):
     with open("top100.csv", "a") as file:
-        file.writelines(f"{username}; {user_input}")
+        file.writelines(f"\n{username}; {user_input}")
     return
 
 
