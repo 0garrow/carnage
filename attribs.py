@@ -6,7 +6,7 @@ from tabulate import tabulate
 
 def write_top100(username, user_input):
     with open("top100.csv", "a") as file:
-        file.writelines(f"{username.lower()}; {user_input}")
+        file.writelines(f"{username}; {user_input}")
     return
 
 
@@ -54,7 +54,7 @@ def get_attr(user_input, usermention, channel, username):
     elif user_input in attributes:
         percentage = 100  # randint(0, 100)
         if percentage == 100:
-            write_top100(username, user_input)
+            write_top100(username.lower(), user_input)
             return f"# Congratulations!!!\n{usermention} is {percentage}% {user_input} and has been added to our TOP 100 hall of fame"
         else:
             return f"{usermention} is {percentage}% {user_input}"
