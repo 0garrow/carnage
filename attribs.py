@@ -14,7 +14,7 @@ def get_attr(user_input, usermention, channel, username):
     # Convert discord module objects to strings.
     user_input = str(user_input)
     channel = str(channel)
-    username = str(username)
+    username = str(username).lower()
     attributes.sort()
     attributes_nsfw.sort()
     attr_list = ", ".join(attributes)
@@ -54,7 +54,7 @@ def get_attr(user_input, usermention, channel, username):
     elif user_input in attributes:
         percentage = 100  # randint(0, 100)
         if percentage == 100:
-            write_top100(username.lower(), user_input)
+            write_top100(username, user_input)
             return f"# Congratulations!!!\n{usermention} is {percentage}% {user_input} and has been added to our TOP 100 hall of fame"
         else:
             return f"{usermention} is {percentage}% {user_input}"
