@@ -36,7 +36,9 @@ def get_attr(user_input, usermention, channel, username):
         {attr_list}
         """
     elif user_input == "top":
+        print("Top command called")
         df = pd.read_csv("top100.csv", sep=";")
+        print(df)
         return tabulate(
             df, headers=["Username", "Attribute"], tablefmt="simple", showindex=False
         )
@@ -52,7 +54,7 @@ def get_attr(user_input, usermention, channel, username):
     ):
         return f"{usermention} is {randint(0, 100)}% {user_input} 😈"
     elif user_input in attributes:
-        percentage = 100 # randint(0, 100)
+        percentage = 100  # randint(0, 100)
         if percentage == 100:
             write_top100(username, user_input)
             return f"# Congratulations!!!\n{usermention} is {percentage}% {user_input} and has been added to our TOP 100 hall of fame"
