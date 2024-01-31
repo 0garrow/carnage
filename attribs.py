@@ -14,7 +14,7 @@ def get_attr(user_input, usermention, channel, username):
     # Convert discord module objects to strings.
     user_input = str(user_input)
     channel = str(channel)
-    username = str(username).lower()
+    username = str(username)
     attributes.sort()
     attributes_nsfw.sort()
     attr_list = ", ".join(attributes)
