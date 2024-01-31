@@ -3,10 +3,12 @@ from variables import attributes, attributes_nsfw
 import pandas as pd
 from tabulate import tabulate
 
+
 def write_top100(username, user_input):
     with open("top100.csv", "a") as file:
         file.writelines(f"{username}; {user_input}")
     return
+
 
 def get_attr(user_input, usermention, channel, username):
     # Convert discord module objects to strings.
@@ -17,7 +19,6 @@ def get_attr(user_input, usermention, channel, username):
     attributes_nsfw.sort()
     attr_list = ", ".join(attributes)
     attr_nsfw_list = ", ".join(attributes_nsfw)
-
 
     if user_input == "help" and channel.startswith("nsfw"):
         return f"""# __Carnage Commands__ (attr)
@@ -36,7 +37,9 @@ def get_attr(user_input, usermention, channel, username):
         """
     elif user_input == "top":
         df = pd.read_csv("top100.csv", sep=";")
-        return tabulate(df, headers=['Username', 'Attribute'], tablefmt='fancy_grid', showindex=False)
+        return tabulate(
+            df, headers=["Username", "Attribute"], tablefmt="simple", showindex=False
+        )
         # top = ""
         # for index, row in enumerate(df):
         #     top = f"{top}\n{index + 1}. {row}"
